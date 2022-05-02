@@ -39,11 +39,12 @@
         android:backgroundTint="#CDF44336"
         android:buttonTint="#3F51B5"
         android:checked="false"
+        android:onClick="play"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textOff="Desligar musica"
-        android:textOn="Ligar musica"
-        tools:ignore="MissingConstraints" />
+        android:textOff="Ligar musica"
+        android:textOn="Desligar musica"
+        tools:ignore="MissingConstraints,OnClick" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
