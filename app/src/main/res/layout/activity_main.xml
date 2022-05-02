@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="560dp"
+        android:layout_height="211dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/capa" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fotografando seus melhores momentos."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.031"
+        />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="137dp"
+        android:layout_height="43dp"
+        android:backgroundTint="#CDF44336"
+        android:buttonTint="#3F51B5"
+        android:checked="false"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textOff="Desligar musica"
+        android:textOn="Ligar musica"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00FFFFFF"
+        android:foregroundTint="#F44336"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="57dp">
+
+        <View
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="270dp"
+            android:layout_marginBottom="30dp"
+            android:background="#000000" />
+
+
+        <GridView
+            android:id="@+id/grid_view_image_text"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:background="#000000"
+            android:columnWidth="110dp"
+            android:gravity="center"
+            android:numColumns="auto_fit"
+            tools:ignore="MissingConstraints">
+
+        </GridView>
+
+        <Button
+            android:id="@+id/botao"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#B8B8B8"
+            android:onClick="orcamento"
+            android:text="Solicitar orçamento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
