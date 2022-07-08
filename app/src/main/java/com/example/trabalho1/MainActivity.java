@@ -6,31 +6,50 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer media;
-    private ToggleButton toggleButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         media = MediaPlayer.create(this, R.raw.music);
+        setUpListeners();
     }
 
-    public void orcamento(View view){
+    private void setUpListeners() {
+        ToggleButton toggle = findViewById(R.id.toggleButton);
+        Button orcamento = findViewById(R.id.orcamento);
 
-        Intent intent = new Intent(this, Orcamento.class);
-        startActivity(intent);
+        toggle.setBackgroundResource(R.color.green);
+
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    media.start();
+                    toggle.setBackgroundResource(R.color.red);
+                } else {
+                    media.pause();
+                    toggle.setBackgroundResource(R.color.green);
+                }
+            }
+        });
+
+        orcamento.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "You have pressed it long :)", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, OrcamentoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
-    public void play(){
-        toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
-        if(toggleButton.isChecked()){
-            media.start();
-        }else{
-            media.pause();
-        }
-
-    }
 }
